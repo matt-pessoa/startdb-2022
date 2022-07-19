@@ -6,6 +6,9 @@ class Forca {
   }
 
   chutar(letra) {
+    if (letra.length > 1) {
+      console.log('\nO chute deve ser de apenas uma letra!\n');
+    }
     this.vidas -= 1;
     this.letrasChutadas.push(letra);
   }

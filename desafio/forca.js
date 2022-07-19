@@ -2,7 +2,16 @@ class Forca {
   constructor(param) {
     this.letrasChutadas = []; // array inicial para armazenar as letras
     this.vidas = 6; // quantidade inicial de vidas
-    this.palavra = param;
+    this.palavraCorreta = param;
+    this.palavra = this.gerarPalavra(param);
+  }
+
+  gerarPalavra(param) {
+    const palavraSecreta = [];
+    for (let i = 1; i <= param.length; i += 1) {
+      palavraSecreta.push('_');
+    }
+    return palavraSecreta;
   }
 
   chutar(letra) {
@@ -16,8 +25,23 @@ class Forca {
       return '';
     }
 
-    this.vidas -= 1;
-    this.letrasChutadas.push(letra);
+    if (!this.letrasChutadas.includes(letra)) {
+      this.vidas -= 1;
+      this.letrasChutadas.push(letra);
+      this.verificacaoPalavra(letra);
+    }
+  }
+
+  verificacaoPalavra(letra) {
+    const palavraCorreta = this.palavraCorreta;
+
+    if (palavraCorreta.includes(letra)) {
+      const indexes = palavraCorreta
+        .split('')
+        .map((elm, idx) => (elm === letra ? idx : ''))
+        .filter((elm) => typeof elm === 'number');
+      indexes.forEach((elm) => (this.palavra[elm] = letra));
+    }
   }
 
   buscarEstado() {

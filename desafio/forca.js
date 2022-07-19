@@ -58,6 +58,7 @@ class Forca {
   } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
 
   mostrarDados() {
+    // ! A solução encontrada foi criar uma função apenas para mostrar os dados do jogo em tempo real
     const letrasChutadas = this.letrasChutadas;
     const vidas = this.vidas;
     const palavra = this.palavra;
@@ -70,6 +71,7 @@ class Forca {
   }
 
   buscarDadosDoJogo() {
+    // ! Agora esta função é responsável por retornar os dados do jogo e resetar o número de vidas
     this.vidas = 6;
 
     const letrasChutadas = this.letrasChutadas;

@@ -12,7 +12,9 @@ let estadosEstaoCorretos = validarEtapa(
   jogoForca
 );
 
+console.log(`Número de vidas ANTES dos chutes: ${jogoForca.vidas}`);
 ['a', 'b', 'c', 'x', 'i'].forEach((letra) => jogoForca.chutar(letra));
+console.log(`Número de vidas DEPOIS dos chutes: ${jogoForca.vidas}`);
 
 estadosEstaoCorretos =
   estadosEstaoCorretos &&

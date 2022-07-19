@@ -51,6 +51,7 @@ class Forca {
     } else if (this.vidas >= 0 && !this.palavra.includes('_')) {
       // caso haja o caractere _, significa que nem todas as letras foram chutadas corretamente
       this.buscarDadosDoJogo.vidas = 6;
+
       return 'ganhou';
     } else {
       return 'aguardando chute';

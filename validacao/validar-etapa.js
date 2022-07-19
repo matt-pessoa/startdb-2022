@@ -10,6 +10,7 @@ const validarEtapa = (
     palavra: arrPalavra,
     letrasChutadas: arrLetrasChutadas,
   } = jogoForca.buscarDadosDoJogo();
+
   const palavra = arrPalavra.join('');
   const letrasChutadas = arrLetrasChutadas.join('');
   const estado = jogoForca.buscarEstado();

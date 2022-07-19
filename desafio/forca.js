@@ -37,20 +37,23 @@ class Forca {
 
     if (palavraCorreta.includes(letra)) {
       const indexes = palavraCorreta
-        .split('')
-        .map((elm, idx) => (elm === letra ? idx : ''))
-        .filter((elm) => typeof elm === 'number');
-      indexes.forEach((elm) => (this.palavra[elm] = letra));
+        .split('') // um array com as letras da palavra a ser adivinhada
+        .map((elm, idx) => (elm === letra ? idx : '')) // descobre o index de cada letra na palavra
+        .filter((elm) => typeof elm === 'number'); // array com os indexes das letras
+
+      indexes.forEach((elm) => (this.palavra[elm] = letra)); // para cada index da palavra correta, será substituído pela letra chutada no array
     }
   }
 
   buscarEstado() {
     if (this.vidas === 0) {
       return 'perdeu';
-    } else if (this.vidas > 0 && !this.palavra.includes('_')) {
+    } else if (this.vidas >= 0 && !this.palavra.includes('_')) {
+      // caso haja o caractere _, significa que nem todas as letras foram chutadas corretamente
+      this.buscarDadosDoJogo.vidas = 6;
       return 'ganhou';
     } else {
-      return '';
+      return 'aguardando chute';
     }
   } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
 

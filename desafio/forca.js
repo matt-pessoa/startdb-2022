@@ -57,7 +57,21 @@ class Forca {
     }
   } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
 
+  mostrarDados() {
+    const letrasChutadas = this.letrasChutadas;
+    const vidas = this.vidas;
+    const palavra = this.palavra;
+
+    return {
+      letrasChutadas,
+      vidas,
+      palavra,
+    };
+  }
+
   buscarDadosDoJogo() {
+    this.vidas = 6;
+
     const letrasChutadas = this.letrasChutadas;
     const vidas = this.vidas;
     const palavra = this.palavra;

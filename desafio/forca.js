@@ -45,7 +45,13 @@ class Forca {
   }
 
   buscarEstado() {
-    return '';
+    if (this.vidas === 0) {
+      return 'perdeu';
+    } else if (this.vidas > 0 && !this.palavra.includes('_')) {
+      return 'ganhou';
+    } else {
+      return '';
+    }
   } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
 
   buscarDadosDoJogo() {

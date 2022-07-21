@@ -30,8 +30,6 @@ class Forca {
     }
 
     if (!this.letrasChutadas.includes(letra)) {
-      this.vidas -= 1;
-      this.letrasChutadas.push(letra);
       this.verificacaoPalavra(letra);
     }
   }
@@ -40,12 +38,17 @@ class Forca {
     const palavraCorreta = this.palavraCorreta;
 
     if (palavraCorreta.includes(letra)) {
+      this.letrasChutadas.push(letra);
+
       const indexes = palavraCorreta
         .split('') // um array com as letras da palavra a ser adivinhada
         .map((elm, idx) => (elm === letra ? idx : '')) // descobre o index de cada letra na palavra
         .filter((elm) => typeof elm === 'number'); // array com os indexes das letras
 
       indexes.forEach((elm) => (this.palavra[elm] = letra)); // para cada index da palavra correta, será substituído pela letra chutada no array
+    } else {
+      this.vidas -= 1;
+      this.letrasChutadas.push(letra);
     }
   }
 

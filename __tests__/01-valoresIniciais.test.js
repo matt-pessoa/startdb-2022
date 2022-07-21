@@ -15,4 +15,16 @@ describe('Verifica os dados iniciais', () => {
   it(`A palavra correta deve ser "${palavraSecreta}"`, () => {
     expect(jogoForca.palavraCorreta).toBe(palavraSecreta);
   });
+
+  describe('Verifica o array da palavra secreta', () => {
+    it(`O array de palavras deve conter ${palavraSecreta.length} _`, () => {
+      expect(jogoForca.palavra).toHaveLength(palavraSecreta.length);
+    });
+
+    it('Todos os elementos do array devem ser _', () => {
+      jogoForca.palavra.forEach((caractere) => {
+        expect(caractere).toBe('_');
+      });
+    });
+  });
 });

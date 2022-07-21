@@ -4,7 +4,8 @@
   "description": "",
   "main": "desafio.js",
   "scripts": {
-    "start": "node desafio/desafio.js"
+    "start": "node desafio/desafio.js",
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {

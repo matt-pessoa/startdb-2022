@@ -9,6 +9,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^28.1.6",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

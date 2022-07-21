@@ -55,5 +55,14 @@ describe('Quando a função chutar for chamada', () => {
         });
       });
     });
+
+    describe('caminho triste', () => {
+      const palavraSecreta = 'amora';
+      const jogoForca = new Forca(palavraSecreta);
+
+      it('O valor da vidas deve ser 0', () => {
+        expect(true).toBe(false);
+      });
+    });
   });
 });

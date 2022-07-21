@@ -16,13 +16,17 @@ class Forca {
 
   chutar(letra) {
     if (letra.length > 1) {
-      console.log('\nO chute deve ser de apenas uma letra!\n');
-      return '';
+      const errorMessageLength = 'O chute deve ser de apenas uma letra!';
+      console.log(`\n${errorMessageLength}\n`);
+
+      return errorMessageLength;
     }
 
     if (this.letrasChutadas.includes(letra)) {
-      console.log(`\nA letra ${letra} já foi chutada!\n`);
-      return '';
+      const errorMessageDuplicate = `A letra ${letra} já foi chutada!`;
+      console.log(`\n${errorMessageDuplicate}\n`);
+
+      return errorMessageDuplicate;
     }
 
     if (!this.letrasChutadas.includes(letra)) {

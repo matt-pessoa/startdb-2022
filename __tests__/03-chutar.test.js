@@ -27,7 +27,7 @@ describe('Quando a função chutar for chamada', () => {
 
   describe('corretamente', () => {
     const caminhoFeliz = ['a', 'm', 'o', 'r'];
-    const caminhoTriste = ['c', 'e', 'b', 'o', 'l', 'a', 's'];
+    const caminhoTriste = ['c', 'e', 'b', 'l', 'i', 's'];
 
     describe('caminho feliz', () => {
       const palavraSecreta = 'amora';
@@ -60,8 +60,26 @@ describe('Quando a função chutar for chamada', () => {
       const palavraSecreta = 'amora';
       const jogoForca = new Forca(palavraSecreta);
 
+      caminhoTriste.forEach((letra) => jogoForca.chutar(letra));
+
       it('O valor da vidas deve ser 0', () => {
-        expect(true).toBe(false);
+        expect(jogoForca.vidas).toBe(0);
+      });
+
+      it(`O array de letras chutadas deve conter as letras ${caminhoTriste}`, () => {
+        jogoForca.letrasChutadas.forEach((letra) => {
+          expect(jogoForca.letrasChutadas).toContain(letra);
+        });
+      });
+
+      it('O array da palavra deve conter apenas _', () => {
+        jogoForca.palavra.forEach((letra) => {
+          expect(letra).toBe('_');
+        });
+
+        caminhoFeliz.forEach((letra) => {
+          expect(jogoForca.palavra).not.toContain(letra);
+        });
       });
     });
   });

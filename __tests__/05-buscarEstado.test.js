@@ -37,8 +37,11 @@ describe('Quando a função buscarEstado for chamada', () => {
 
     caminhoIncompleto.forEach((elm) => jogoForca.chutar(elm));
 
-    it('deve ser retornado "aguardando chute"', () => {
+    it('o número de vidas deve ser 3', () => {
       expect(jogoForca.vidas).toBe(3);
+    });
+
+    it('deve ser retornado "aguardando chute"', () => {
       expect(jogoForca.buscarEstado()).toBe('aguardando chute');
     });
   });

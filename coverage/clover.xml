@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1658496622042" clover="3.2.0">
-  <project timestamp="1658496622042" name="All files">
+<coverage generated="1658496657841" clover="3.2.0">
+  <project timestamp="1658496657841" name="All files">
     <metrics statements="38" coveredstatements="38" conditionals="16" coveredconditionals="15" methods="9" coveredmethods="9" elements="63" coveredelements="62" complexity="0" loc="38" ncloc="38" packages="1" files="1" classes="1"/>
     <file name="forca.js" path="/home/matheuspessoa/me/startdb-2022/desafio/forca.js">
       <metrics statements="38" coveredstatements="38" conditionals="16" coveredconditionals="15" methods="9" coveredmethods="9"/>

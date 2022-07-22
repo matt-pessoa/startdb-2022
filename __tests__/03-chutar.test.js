@@ -35,8 +35,8 @@ describe('Quando a função chutar for chamada', () => {
 
       caminhoFeliz.forEach((letra) => jogoForca.chutar(letra));
 
-      it(`O valor das vidas deve ser ${6 - caminhoFeliz.length}`, () => {
-        expect(jogoForca.vidas).toBe(6 - caminhoFeliz.length);
+      it(`O valor das vidas deve ser 6`, () => {
+        expect(jogoForca.vidas).toBe(6);
       });
 
       it(`O array de letras chutadas deve conter as letras ${caminhoFeliz}`, () => {

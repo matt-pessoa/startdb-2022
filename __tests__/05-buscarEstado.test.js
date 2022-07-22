@@ -28,4 +28,18 @@ describe('Quando a função buscarEstado for chamada', () => {
       expect(jogoForca.buscarEstado()).toBe('ganhou');
     });
   });
+
+  describe('caso contrário', () => {
+    const palavraSecreta = 'amora';
+    const jogoForca = new Forca(palavraSecreta);
+
+    const caminhoIncompleto = ['a', 'b', 'c', 'x'];
+
+    caminhoIncompleto.forEach((elm) => jogoForca.chutar(elm));
+
+    it('deve ser retornado "aguardando chute"', () => {
+      expect(jogoForca.vidas).toBe(3);
+      expect(jogoForca.buscarEstado()).toBe('aguardando chute');
+    });
+  });
 });

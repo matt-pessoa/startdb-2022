@@ -16,18 +16,20 @@ class Forca {
 
   chutar(letra) {
     if (letra.length > 1) {
-      console.log('\nO chute deve ser de apenas uma letra!\n');
-      return '';
+      const errorMessageLength = 'O chute deve ser de apenas uma letra!';
+      console.log(`\n${errorMessageLength}\n`);
+
+      return errorMessageLength;
     }
 
     if (this.letrasChutadas.includes(letra)) {
-      console.log(`\nA letra ${letra} já foi chutada!\n`);
-      return '';
+      const errorMessageDuplicate = `A letra ${letra} já foi chutada!`;
+      console.log(`\n${errorMessageDuplicate}\n`);
+
+      return errorMessageDuplicate;
     }
 
     if (!this.letrasChutadas.includes(letra)) {
-      this.vidas -= 1;
-      this.letrasChutadas.push(letra);
       this.verificacaoPalavra(letra);
     }
   }
@@ -36,12 +38,17 @@ class Forca {
     const palavraCorreta = this.palavraCorreta;
 
     if (palavraCorreta.includes(letra)) {
+      this.letrasChutadas.push(letra);
+
       const indexes = palavraCorreta
         .split('') // um array com as letras da palavra a ser adivinhada
         .map((elm, idx) => (elm === letra ? idx : '')) // descobre o index de cada letra na palavra
         .filter((elm) => typeof elm === 'number'); // array com os indexes das letras
 
       indexes.forEach((elm) => (this.palavra[elm] = letra)); // para cada index da palavra correta, será substituído pela letra chutada no array
+    } else {
+      this.vidas -= 1;
+      this.letrasChutadas.push(letra);
     }
   }
 

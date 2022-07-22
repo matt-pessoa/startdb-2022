@@ -4,10 +4,15 @@
   "description": "",
   "main": "desafio.js",
   "scripts": {
-    "start": "node desafio/desafio.js"
+    "start": "node desafio/desafio.js",
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^28.1.6",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
 }
